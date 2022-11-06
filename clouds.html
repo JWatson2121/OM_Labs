@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Spline — Coming Soon Page Template</title>
+	<title>OM Labs</title>
 	<!-- Modernizr -->
 	<script src="js/modernizr.js"></script>
 	<!-- Open Sans from Google Webfonts -->
@@ -13,10 +13,11 @@
 	<!-- Icons via Font Awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css" />
 </head>
-<body>
+<body class="color-scheme-retro">
 	<!-- Animated background -->
 	<canvas id="bg-canvas"></canvas>
-	
+	<!-- Background image -->
+	<img src="images/retro-bg.jpg" style="width: 100%; height: 100%; position: fixed;" alt="" />
 	<!-- First screen -->
 	<div class="splash">
 		<div class="centered-unit">
@@ -46,7 +47,7 @@
 					<!-- Seconds -->
 					<div class="time seconds">
 						<div class="value">00</div>
-						<div class="unit">Seconds</div>
+						<div class="unit" style="color: rgba(255,255,255,0.3)">Seconds</div>
 					</div>
 				</div>
 				<!-- Countdown end -->
@@ -106,7 +107,7 @@
 					</div>
 					<div class="contact">
 						<span class="icon"><i class="fa fa-map-marker fa-fw"></i></span>
-						<span class="value">Malczewkiego&nbsp;7/50, 80107&nbsp;Gdansk, Poland</span>
+						<span class="value">Jacka Malczewkiego 7/50,<br/>80-107 Gdansk,<br/>Poland</span>
 					</div>
 				</div>
 				<!-- Third column end -->
@@ -146,10 +147,9 @@
 	</div>
 	
 	<!-- JavaScripts -->
-	
 	<script src="js/jquery.js"></script>
 	<script src="js/countdown.js"></script>
-	<script src="js/bezierCanvas.js"></script>
+	<script src="js/bezierCanvas.js?2"></script>
 	<script src="js/notifyMe.js"></script>
 	
 	<script type="text/javascript">
@@ -168,15 +168,19 @@
 		
 		// Activate bezierCanvas plugin on a #bg-canvas element
 		$("#bg-canvas").bezierCanvas({
-			maxStyles: 10,
-			maxLines: 100,
-			lineSpacing: 1,
-			colorBase: {r: 100,g: 100,b: 100},
-			colorVariation: {r: 150, g: 120, b: 150},
-			delayVariation: 0.5,
-			globalAlpha: 0.5,
-			globalSpeed: 500,
+			maxStyles: 1,
+			maxLines: 5,
+			lineSpacing: 0.3,
+			spacingMode: "multiply",
+			colorBase: {r: 255,g: 255,b: 255},
+			colorVariation: {r: 0, g: 0, b: 0},
+			moveCenterX: 0,
+			moveCenterY: 0,
+			delayVariation: 5,
+			globalAlpha: 0.3,
+			globalSpeed: 20,
 		});
+		
 		
 		// Add handler on 'Scroll down to learn more' link
 		$().ready(function(){
@@ -185,7 +189,6 @@
 				$("body,html").animate({scrollTop: $(window).height()});
 			});
 		});		
-
 		
 	});
 	</script>
